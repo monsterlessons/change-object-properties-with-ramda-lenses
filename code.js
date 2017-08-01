@@ -1,0 +1,15 @@
+const user = {
+  name: 'John',
+  surname: 'Flint'
+}
+
+// const nameLens = R.lens(R.prop('name'), R.assoc('name'))
+const nameLens = R.lensProp('name')
+
+// const name = R.view(nameLens, user)
+// const upperName = R.toUpper(name)
+// const result = R.set(nameLens, upperName, user)
+//
+const result = R.over(nameLens, R.toUpper, user)
+
+console.log('result', result)
